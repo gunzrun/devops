@@ -1,0 +1,7 @@
+---
+esxi_host: 192.168.31.202
+esxi_user: root
+esxi_pass: "@WJLrehx"
+vlan_network: "VM Network"
+path_template: vm_template/centos7.ovf
+inventory_hostname: test_machine

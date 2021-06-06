@@ -1,0 +1,6 @@
+ip_address: 192.168.31.208
+netmask: 255.255.255.0
+net_prefix: 24
+cpu: 4
+ram: 2048
+ext_disk: 10

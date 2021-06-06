@@ -1,0 +1,14 @@
+---
+- name: "Create VM to ESXi"
+  vmware_deploy_ovf:
+    hostname: "{{ esxi_host }}"
+    username: "{{ esxi_user }}"
+    password: "{{ esxi_pass }}"
+    validate_certs: no
+    ovf: "{{ path_vmdk  }}/{{ path_template }}"
+    name: "{{ inventory_hostname }}"
+    networks: "{{ vlan_network }}"
+    power_on: no
+  deligate_to: localhost
+  register: vm_facts
+  tags: vmware
