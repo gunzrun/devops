@@ -1,12 +1,35 @@
 ---
-- name: "Create VM to ESXi"
+- name: "Create VM from OVF image to ESXi"
   vmware_deploy_ovf:
     hostname: '{{ esxi_host }}'
     username: '{{ esxi_user }}'
     password: '{{ esxi_pass }}'
     validate_certs: no
-    ovf: '{{ path_vmdk  }}/{{ path_template }}'
+    ovf: '{{ path_vmdk  }}'
     name: '{{ inventory_hostname }}'
-    networks: '{{ vlan_network }}'
     power_on: no
   delegate_to: localhost
+
+- name: "Configure RAM and CPU"
+  vmware_guest:
+    hostname: '{{ esxi_host }}'
+    username: '{{ esxi_user }}'
+    password: '{{ esxi_pass }}'
+    validate_certs: no
+    name: '{{ inventory_hostname }}'
+    state: present
+    hardware:
+      memory_mb: '{{ ram }}'
+      num_cpus: '{{ cpu }}'
+  delegate_to: localhost
+
+- name: "Start VM"
+  vmware_guest:
+    hostname: '{{ esxi_host }}'
+    username: '{{ esxi_user }}'
+    password: '{{ esxi_pass }}'
+    validate_certs: no
+    name: '{{ inventory_hostname }}'
+    state: 'poweredon'
+  delegate_to: localhost
+  register: hard_facts

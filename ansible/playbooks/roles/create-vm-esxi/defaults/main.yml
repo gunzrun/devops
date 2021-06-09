@@ -1,7 +1,13 @@
 ---
 esxi_host: 192.168.31.202
 esxi_user: root
-esxi_pass: "@WJLrehx"
-vlan_network: "VM Network"
-path_template: vm_template/centos7.ovf
-inventory_hostname: test_machine
+esxi_pass: '@WJLrehx'
+path_vmdk: /Users/den/vm_template/tmp_image.ovf
+ip_vmdk: 192.168.31.211
+timezone: 'Europe/Moscow'
+
+#private_public_key: /User/den/.ssh/id_rsa
+#inventory_hostname: test_machine
+ansible_host: 192.168.31.211
+ansible_user: root
+ansible_ssh_private_key_file: /Users/den/.ssh/id_rsa

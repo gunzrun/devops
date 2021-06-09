@@ -1,2 +1,7 @@
 ---
-esxi_host: 192.168.31.202
+#root_public_key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCmfL4ZdloKa0RF49N2uX+Zg7RvWjp225WGSMm/a9lPSIWh6c7p22JVgtpiy73Ab7iD7IZZpwzucKduo8wlJe7YwKbKxVrL7ZJ/MqBP6XSBjaEVUAhGnlFON/H1cHtvvCyugXSWPtSKc6LcrOb2SsP9UUF5Y+tUSH2P/t/wjyVWt2LMxCuL0QbdIi36HwyeiJiQX2MgWhgurXAwgzyva++gwKgixdG1/xWA8o0irEshRgBHCaWbM6ctITHxdYmeZ3yEASVmKkY9A97x+qiQBBc5TEWonLPulIZj4WmS9EJtkO5N4f+LVRj7RC9A6ikCiNrF5m79NvpQdMIZtefYfZfj den@MBP-Denis
+#ansible_user: root
+#ansible_user: root
+#ansible_ssh_private_key_file: /Users/den/.ssh/id_rsa
+#ansible_become=true
+#ansible_become_user=root

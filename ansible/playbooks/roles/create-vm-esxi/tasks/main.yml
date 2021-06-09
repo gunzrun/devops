@@ -1,3 +1,7 @@
 ---
 - name: "Create VM"
   include_tasks: create-vm.yml
+
+- name: "Configure VM"
+  include_tasks: configure-vm.yml
+

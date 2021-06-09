@@ -1,0 +1,15 @@
+inventory_hostname: test.okd
+vlan_network: 'VLAN10'
+ip_address: 192.168.31.212
+netmask: 255.255.255.0
+net_prefix: 24
+gateway: 192.168.31.254
+cpu: 2
+ram: 1024
+ext_disk: 10
+packages:
+  - mc
+  - open-vm-tools
+#ansible_host: 192.168.31.211
+ansible_user: root
+ansible_ssh_private_key_file: /Users/den/.ssh/id_rsa

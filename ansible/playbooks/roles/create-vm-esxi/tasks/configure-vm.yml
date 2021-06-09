@@ -1,0 +1,35 @@
+---
+- name: "Wait connection VM"
+  delegate_to: localhost
+  wait_for:
+    host: '{{ ip_vmdk }}'
+    port: 22
+  tags: configure
+
+- name: "Set hostname"
+  delegate_to: '{{ ip_vmdk }}'
+  copy:
+    content: '{{ inventory_hostname }}'
+    dest: /etc/hostname
+  tags: configure
+
+- name: "Set timezone"
+  delegate_to: '{{ ip_vmdk }}'
+  timezone:
+    name: '{{ timezone }}'
+
+- name: "Install tools"
+  yum:
+    name: '{{ packages }}'
+
+- name: "Copy ethernet configuration file"
+  delegate_to: '{{ ip_vmdk }}'
+  template:
+    src: ifcfg-ens192.j2
+    dest: /etc/sysconfig/network-scripts/ifcfg-ens192
+
+- name: "Reboot VM"
+  delegate_to: '{{ ip_vmdk }}'
+  shell: 'sleep 1 && shutdown -r now'
+  async: 1
+  poll: 0

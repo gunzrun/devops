@@ -1,20 +1,17 @@
 ---
 all:
   children:
-    esxi:
-      hosts:
-        localhost.adlerdc.local: {}
     helpers:
       hosts:
         dns.okd: {}
     k8s:
       hosts:
-        k8s-m1: {}
-        k8s-m2: {}
-        k8s-m3: {}
-        k8s-w1: {}
-        k8s-w2: {}
-        k8s-w3: {}
+        k8s-m1.okd: {}
+        k8s-m2.okd: {}
+        k8s-m3.okd: {}
+        k8s-w1.okd: {}
+        k8s-w2.okd: {}
+        k8s-w3.okd: {}
     test:
       hosts:
-        testing_machine: {}
+        tmp_image: {}
