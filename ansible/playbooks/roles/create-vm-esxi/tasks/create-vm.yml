@@ -10,7 +10,7 @@
     power_on: no
   delegate_to: localhost
 
-- name: "Configure RAM and CPU"
+- name: "Configure RAM and CPU and Network"
   vmware_guest:
     hostname: '{{ esxi_host }}'
     username: '{{ esxi_user }}'
@@ -21,6 +21,8 @@
     hardware:
       memory_mb: '{{ ram }}'
       num_cpus: '{{ cpu }}'
+    networks:
+      - name: '{{ network_name }}'
   delegate_to: localhost
 
 - name: "Start VM"

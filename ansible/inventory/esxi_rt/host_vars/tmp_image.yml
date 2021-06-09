@@ -1,6 +1,6 @@
 inventory_hostname: test.okd
-vlan_network: 'VLAN10'
-ip_address: 192.168.31.212
+network_name: 'VM Network'
+ip_address: 192.168.31.10
 netmask: 255.255.255.0
 net_prefix: 24
 gateway: 192.168.31.254
